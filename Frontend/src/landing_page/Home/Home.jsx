@@ -1,11 +1,12 @@
 import React from 'react';
-import backgroundImage from './home.jpeg';
+import { Link } from 'react-router-dom';
+import backgroundImage from './home.jpg';
 
 export default function Home() {
   const features = [
     {
       icon: (
-        <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
       ),
@@ -15,7 +16,7 @@ export default function Home() {
     },
     {
       icon: (
-        <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 10c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" />
         </svg>
       ),
@@ -25,155 +26,90 @@ export default function Home() {
     },
     {
       icon: (
-        <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <svg className="w-10 h-10 sm:w-12 sm:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20h4M12 4v16m8-8H4" />
         </svg>
       ),
       title: "Easy Customization",
-      description: "Tailor-made UI components to match your brand’s vision.",
+      description: "Tailor-made UI components to match your brand's vision.",
       color: "text-purple-600",
     },
   ];
 
-  const services = [
-    {
-      title: "Web Development",
-      description: "Scalable, responsive websites built with cutting-edge tech.",
-      icon: (
-        <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-7v7m0 0v2m0-2h-7m7 0h7" />
-        </svg>
-      ),
-    },
-    {
-      title: "App Development",
-      description: "Cross-platform mobile apps with seamless performance.",
-      icon: (
-        <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-        </svg>
-      ),
-    },
-    {
-      title: "UI/UX Design",
-      description: "Intuitive, user-focused designs that captivate and convert.",
-      icon: (
-        <svg className="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0zm-3 9c-4.97 0-9-4.03-9-9s4.03-9 9-9 9 4.03 9 9-4.03 9-9 9z" />
-        </svg>
-      ),
-    },
-  ];
-
   return (
-    <div className="min-h-screen flex flex-col font-sans">
-      {/* Header Section */}
+    <div className="flex flex-col font-sans antialiased">
+      {/* Hero Section */}
       <header className="relative w-full">
-        {/* Desktop Background */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-indigo-900/80 z-10" />
         <div
-          className="hidden md:block min-h-[80vh] bg-gradient-to-b from-gray-900/80 to-transparent"
+          className="h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-screen flex items-center justify-center bg-cover bg-center"
           style={{
             backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover",
+            backgroundSize: "cover", // Ensures image covers the area
             backgroundPosition: "center",
-            backgroundBlendMode: "overlay",
+            backgroundRepeat: "no-repeat",
+            backgroundAttachment: "scroll", // Changed from fixed for better mobile compatibility
           }}
         >
-      
-        </div>
-
-        {/* Mobile Background */}
-        <div className="block md:hidden relative min-h-[60vh]">
-          <div
-            className="absolute inset-0 bg-gradient-to-b from-gray-900/70 to-transparent"
-            style={{
-              backgroundImage: `url(${backgroundImage})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center 20%",
-            }}
-          />
-         
+          <div className="relative z-20 text-center px-4 sm:px-6 md:px-8 max-w-4xl mx-auto">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-tight">
+              <span className="block">Unleashing Digital</span>
+              <span className="block text-blue-300">Excellence</span>
+            </h1>
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-6 sm:mb-8 md:mb-10 max-w-2xl mx-auto">
+              We're a team of <span className="text-indigo-500 mr-1">⚡</span>Binary Bandits dedicated to transforming your ideas into powerful, scalable, and stunning digital experiences.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <Link
+                to="/work"
+                className="px-6 py-2 sm:px-8 sm:py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/50 text-sm sm:text-base"
+              >
+                Explore Our Work
+              </Link>
+              <Link
+                to="/contact"
+                className="px-6 py-2 sm:px-8 sm:py-3 bg-transparent border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 text-sm sm:text-base"
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
         </div>
       </header>
 
       {/* Main Content */}
-      <main className="bg-gray-50 py-12 md:py-20">
-        {/* Hero Section */}
-        <section className="mb-20 text-center px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-6">
-            Unleashing Digital Excellence
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            We’re a team of code warriors dedicated to transforming your ideas into powerful, scalable, and stunning digital experiences.
-          </p>
-          <button className="mt-8 px-8 py-3 bg-gradient-to-r from-blue-500 to-indigo-500 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-indigo-600 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            Explore Our Work
-          </button>
-        </section>
-
+      <main>
         {/* Features Section */}
-        <section className="mb-20 px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">
-            Why Binary Bandits?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-lg p-8 text-center transform transition-all duration-500 hover:scale-105 hover:shadow-xl group"
-              >
-                <div className={`mb-6 ${feature.color} group-hover:animate-pulse`}>
-                  {feature.icon}
+        <section className="py-12 sm:py-16 md:py-20 bg-white">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-3 sm:mb-4">
+                Why Binary Bandits?
+              </h2>
+              <div className="h-1 w-16 sm:w-20 md:w-24 bg-blue-600 mx-auto mb-4 sm:mb-6"></div>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600 max-w-3xl mx-auto">
+                We combine cutting-edge technology with creative excellence to deliver solutions that stand out.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-xl shadow-xl p-6 sm:p-8 text-center transform transition-all duration-500 hover:shadow-2xl hover:-translate-y-2"
+                >
+                  <div className={`mb-4 sm:mb-6 ${feature.color} mx-auto`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Services Section */}
-        <section className="mb-20 px-4 bg-gray-100 py-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">
-            Our Services
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-2xl shadow-lg p-8 text-center transition-all duration-500 hover:bg-indigo-50 hover:shadow-xl"
-              >
-                <div className="mb-6 text-indigo-600">{service.icon}</div>
-                <h3 className="text-xl md:text-2xl font-semibold text-gray-800 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Team Beliefs Section */}
-        <section className="mb-20 px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">
-            Our Core Belief
-          </h2>
-          <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-lg p-8 text-center">
-            <blockquote className="text-lg md:text-xl italic text-gray-700 mb-6 leading-relaxed">
-              "Code is our weapon, innovation is our mission. We build solutions that redefine possibilities and empower the future."
-            </blockquote>
-            <p className="font-semibold text-indigo-600 text-lg md:text-xl">
-              The Binary Bandits Crew
-            </p>
-            <p className="text-gray-500 text-sm md:text-base">
-              Raju Kumar, Tanmay Dev, Ayush Kumar
-            </p>
+              ))}
+            </div>
           </div>
         </section>
       </main>
